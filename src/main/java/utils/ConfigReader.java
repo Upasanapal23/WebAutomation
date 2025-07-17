@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -12,8 +13,8 @@ public class ConfigReader {
             FileInputStream fis = new FileInputStream("src/main/resources/config.properties");
             properties.load(fis);
             fis.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.err.println("Error loading configuration file: " + e.getMessage());
         }
     }
 

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -46,5 +47,10 @@ public class LoginSteps {
     @Then("I should see an error message")
     public void i_should_see_an_error_message() {
         Assert.assertTrue(loginPage.isErrorMessageDisplayed(), "Error message not displayed for invalid login");
+    }
+
+    @After
+    public void tearDown() {
+        DriverFactory.quitDriver();
     }
 }

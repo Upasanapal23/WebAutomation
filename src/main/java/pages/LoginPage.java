@@ -32,6 +32,7 @@ public class LoginPage extends BasePage {
         sendKeys(emailField, email);
         sendKeys(passwordField, password);
         click(loginButton);
+        click(loginButton , 5);
     }
 
     public boolean isErrorMessageDisplayed() {
